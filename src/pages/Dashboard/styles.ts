@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { FlatList } from 'react-native'
-import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { FlatList } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RectButton } from 'react-native-gesture-handler';
 
 import { Provider } from './index';
@@ -19,7 +19,7 @@ export const Header = styled.View`
   align-items: center;
 `;
 
-export const HeaderTitile = styled.Text`
+export const HeaderTitle = styled.Text`
   color: #f4ede8;
   font-size: 20px;
   font-family: 'RobotoSlab-Regular';

@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { View, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -10,7 +9,7 @@ import api from '../../services/api';
 import {
   Container,
   Header,
-  HeaderTitile,
+  HeaderTitle,
   UserName,
   ProfileButton,
   UserAvatar,
@@ -48,17 +47,18 @@ const Dashboard: React.FC = () => {
     signOut();
   }, [navigate]);
 
-  const navigateToCreateAppointment = useCallback((provider_id: string) => {
-    navigate('CreateAppointment', { provider_id });
+  const navigateToCreateAppointment = useCallback((providerId: string) => {
+    console.log(providerId)
+    navigate('CreateAppointment', { providerId });
   }, [navigate]);
 
   return (
     <Container>
       <Header>
-        <HeaderTitile>
+        <HeaderTitle>
           Bem vindo, {'\n'}
           <UserName>{user.name}</UserName>
-        </HeaderTitile>
+        </HeaderTitle>
 
         <ProfileButton onPress={navigateToProfile}>
           <UserAvatar source={{ uri: user.avatar_url }} />
