@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -13,8 +15,8 @@ const AppRoutes: React.FC = () => (
     screenOptions={{
       headerShown: false,
       cardStyle: {
-        backgroundColor: '#312e38'
-      }
+        backgroundColor: '#312e38',
+      },
     }}
   >
     <App.Screen name="Dashboard" component={Dashboard} />
@@ -23,6 +25,6 @@ const AppRoutes: React.FC = () => (
 
     <App.Screen name="Profile" component={Profile} />
   </App.Navigator>
-)
+);
 
 export default AppRoutes;
