@@ -52,7 +52,7 @@ interface AvailabilityItem {
 
 const CreateAppointment: React.FC = () => {
   const { user } = useAuth();
-  const { goBack, navigate } = useNavigation();
+  const { goBack, navigate, reset } = useNavigation();
 
   const route = useRoute();
   const { providerId } = route.params as RouteParams;
@@ -127,7 +127,12 @@ const CreateAppointment: React.FC = () => {
         date,
       });
 
-      navigate('AppointmentCreated', { date: date.getTime() });
+      reset({
+        index: 0,
+        routes: [
+          { name: 'AppointmentCreated', params: { date: date.getTime() } }
+        ]
+      });
     } catch (error) {
       Alert.alert(
         'Erro ao criar agendamento',
